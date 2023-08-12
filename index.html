@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qi HE's Portfolio</title>
+    <style>
+        body {
+            background-color: rgba(255, 182, 193, 0.7);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 95%;
+            margin: auto;
+            background: transparent;
+            box-shadow: none; 
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 4000px; /* 增加或减少这个数字来调整模块的宽度 */
+        }
+
+        .module {
+            border: 1px solid #eaeaea;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-title {
+            font-weight: bold;
+            color: black; /* 将文字颜色设为透明 */
+            -webkit-text-stroke: 0.5px #808080; /* 边缘，宽度2px */
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #666;
+            padding-bottom: 10px;
+        }
+
+        .module-content a {
+            text-decoration: none;
+            color: #0073e6;
+            transition: color 0.3s;
+        }
+
+        .module-content a:hover {
+            color: #0055a4;
+        }
+        .module:hover {
+        transform: scale(1.02);  /* 使模块在悬停时放大2% */
+        transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间为0.3秒 */
+        }
+        img {
+            width: 24px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .programming-column, .tool-icon {
+            flex-basis: calc(32% - 10px);
+            margin-right: 15px;
+        }
+
+        .tool-icon {
+            height: 60px;
+            background-color: #eaeaea;
+            margin: 5px 0;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #666;
+            transition: background-color 0.3s;
+        }
+
+        .tool-icon:hover {
+            background-color: #d4d4d4;
+        }
+
+    .certificate {
+        display: inline-block;  /* 改为inline-block，使得证书并排显示 */
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #d4d4d4;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s;  /* 平滑的背景颜色过渡 */
+        position: relative;  /* 为后面的tooltip做准备 */
+    }
+
+    .certificate:hover {
+        background-color: #f0f0f0;  /* 鼠标悬停时的背景色 */
+        cursor: pointer;
+    }
+        .certificate::before {
+        content: "show credential";
+        position: absolute;
+        bottom: 100%;  /* 定位到框的上方 */
+        left: 50%;  /* 水平居中 */
+        transform: translateX(-50%);  /* 使文本真正居中 */
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        opacity: 0;  /* 默认设置为透明 */
+        pointer-events: none;  /* 确保不会干扰鼠标事件 */
+        transition: opacity 0.3s;  /* 平滑的透明度过渡 */
+        white-space: nowrap;  /* 防止文字换行 */
+    }
+    .certificate:hover::before {
+        opacity: 1;  /* 鼠标悬停时显示文字 */
+    }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* 控制图标间距 */
+        }
+
+        .icon-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid pink;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: transparent; /* 初始时文字透明 */
+            background-clip: text;
+            box-shadow: 0 0 5px pink; /* 文字边缘发光 */
+            transition: transform 0.3s, font-size 0.3s; /* 平滑的动画效果 */
+        }
+
+        .icon-box img {
+            margin-bottom: 10px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .icon-box:hover {
+            transform: scale(1.1); /* 鼠标悬浮时放大效果 */
+            font-size: 1.1em;
+        }
+
+        #email-icon {
+            cursor: pointer; /* 将鼠标样式更改为手形 */
+        }
+
+/* 横向滚动的容器样式 */
+.projects-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    white-space: nowrap;
+}
+
+/* 每个分类框的样式 */
+.category-box {
+    margin-right: 5px; /* 增加右边距来增加间隔 */
+    border: 1px solid #d4d4d4;
+    padding: 15px;
+    border-radius: 5px;
+    word-wrap: break-word; /* 当文字过长时，使其在框内换行 */
+    background-color: #f0f0f0;  /* rgba 表示红绿蓝及透明度 */
+    transition: background-color 0.4s
+}
+
+/* 分类名称样式 */
+.category-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 项目名称样式 */
+.project-name {
+    font-size: 12px;
+    transition: font-size 0.2s; /* 平滑的放大效果 */
+    position: relative;
+    padding-left: 20px; /* Provide space for the list-style symbol */
+}
+
+.project-name::before {
+    content: "•";  /* This is a bullet point symbol */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the bullet point */
+    font-size: 20px; /* Adjust the size of the bullet point */
+    color: black; /* Adjust the color of the bullet point */
+}
+
+.project-name:hover {
+    font-weight: bold;
+    color: #FF6699;  /* Change color to a shade of pink when hovered */
+}
+
+.category-box:hover,
+.category-box:hover .category-title,
+.category-box:hover .project-name {
+    background-color: #eaeaea;
+    transform: scale(1.03);
+    transition: transform 0.4s ease-in-out;
+}
+
+.category-box img {
+    width: 300px;  /* 这会使图片宽度与`category-box`一致 */
+    height: 350px;  /* 保持图片的原始比例 */
+    display: block;  /* 移除图片下方的小间隙 */
+    margin-bottom: 10px;  /* 在图片和项目之间增加一些空间 */
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Basic Info & Education Module -->
+        <div class="module">
+            <div class="module-title">About Me</div>
+            <div class="module-content">
+                <div>
+                    <strong>Education:</strong>
+                    <ul>
+                        <li>Master of Science in Analytics, USC</li>
+                        <li>Bachelor of Engineering in Transportation, GDUT</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Module -->
+        <div class="module">
+            <div class="module-title">Skills</div>
+            <div class="module-content skills">
+                <!-- Programming Languages -->
+                <div class="programming-column">
+                    <strong>Python:</strong>
+                    <ul>
+                        <li>Pandas</li>
+                        <li>Numpy</li>
+                        <li>Sklearn</li>
+                    </ul>
+                </div>
+                <div class="programming-column">
+                    <strong>SQL:</strong>
+                    <ul>
+                        <li>JOINs</li>
+                        <li>Window Function</li>
+                        <li>Subquery</li>
+                    </ul>
+                </div>
+                <div class="programming-column">
+                    <strong>R:</strong>
+                    <ul>
+                        <li>ggplot</li>
+                        <li>tidyverse</li>
+                        <li>dplyr</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skills">
+                <!-- Tools Icons -->
+                <div class="tool-icon">Excel</div>
+                <div class="tool-icon">Tableau</div>
+                <div class="tool-icon">Snowflake</div>
+                <div class="tool-icon">Airflow</div>
+                <div class="tool-icon">STATA</div>
+                <div class="tool-icon">OpenReply</div>
+            </div>
+        </div>
+
+        <!-- Certificates -->
+<div class="module">
+    <div class="module-title">Certificates</div>
+    <div class="module-content">
+        <a class="certificate" href="https://api.accredible.com/...">Google Analytics</a>
+        <a class="certificate" href="http://ude.my/...">Udemy(Tableau Advanced)</a>
+        <a class="certificate" href="https://www.hackerrank.com/certificates/3bd7808335f1">HarkerRank(SQL Hard)</a>
+        <a class="certificate" href="#">AWS(Data Analytics Fundamentals)</a>
+    </div>
+</div>
+
+        <!-- Experience Module -->
+        <div class="module">
+            <div class="module-title">Experience</div>
+            <div class="module-content">
+                <ul>
+                    <li>User Experience Analyst at China Mobile Internet Co., Ltd</li>
+                    <li>Research Assistant at Huatai Securities Co., Ltd. (ESOP)</li>
+                </ul>
+            </div>
+        </div>
+
+<!-- 项目模块开始 -->
+<div class="module">
+    <div class="module-title">Projects</div>
+    <div class="projects-container">
+        <!-- 分类：Recently -->
+<div class="category-box">
+    <h3 class="category-title">Recently:</h3>
+    <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?fit=crop&w=500&h=500" data-default-image="https://images.unsplash.com/photo-1579546929662-711aa81148cf?fit=crop&w=500&h=500" alt="Default Image for Recently" class="category-image">
+    <div class="project-name" data-hover-image="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?fit=crop&w=500&h=500">Netflix EDA & Hybrid Movie Recommendation System</div>
+    <div class="project-name" data-hover-image="hover-image-for-ab-testing.jpg">A/B Testing for Mobile Game Optimization</div>
+</div>
+
+<!-- 分类：Visualization -->
+<div class="category-box">
+    <h3 class="category-title">Visualization:</h3>
+    <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?fit=crop&w=500&h=500" alt="Default Image for Visualization" class="category-image">
+    <div class="project-name" data-hover-image="hover-image-for-employee-compensation.jpg">Employee Compensation Performance Dashboard</div>
+    <div class="project-name" data-hover-image="hover-image-for-startup-investment.jpg">Strategic Startup Investment Analysis Dashboard</div>
+</div>
+
+<!-- 分类：NLP -->
+<div class="category-box">
+    <h3 class="category-title">NLP:</h3>
+    <img src="default-image-for-nlp.jpg" alt="Default Image for NLP" class="category-image">
+    <div class="project-name" data-hover-image="hover-image-for-netflix-nlp.jpg">Netflix EDA & Hybrid Movie Recommendation System</div>
+    <div class="project-name" data-hover-image="hover-image-for-text-analytics.jpg">Text Analytics for Email Database</div>
+</div>
+
+<!-- 分类：Deep Learning -->
+<div class="category-box">
+    <h3 class="category-title">Deep Learning:</h3>
+    <img src="default-image-for-deep-learning.jpg" alt="Default Image for Deep Learning" class="category-image">
+    <div class="project-name" data-hover-image="hover-image-for-credit-card-fraud.jpg">Credit Card Fraud Detection with Autoencoders</div>
+    <div class="project-name" data-hover-image="hover-image-for-digit-recognizer.jpg">Digit Recognizer using Convolutional Neural Networks (CNNs)</div>
+</div>
+
+<!-- 分类：Machine Learning -->
+<div class="category-box">
+    <h3 class="category-title">Machine Learning:</h3>
+    <img src="default-image-for-machine-learning.jpg" alt="Default Image for Machine Learning" class="category-image">
+    <div class="project-name" data-hover-image="hover-image-for-titanic.jpg">Titanic Dataset Analysis \& Predictive Modeling</div>
+    <div class="project-name" data-hover-image="hover-image-for-health-records.jpg">Process Mining for Electronic Health Records (EHRs)</div>
+    <div class="project-name" data-hover-image="hover-image-for-medical-cost.jpg">Predictive Analysis for Medical Cost with Machine Learning</div>
+</div>
+
+<!-- 分类：Database & SQL -->
+<div class="category-box">
+    <h3 class="category-title">Database & SQL:</h3>
+    <img src="default-image-for-database-sql.jpg" alt="Default Image for Database & SQL" class="category-image">
+    <div class="project-name" data-hover-image="hover-image-for-etl.jpg">ETL Data Pipeline Management with Python \& SQLite</div>
+    <div class="project-name" data-hover-image="hover-image-for-foods-database.jpg">SQLite-Powered International Foods Database Management</div>
+</div>
+        
+        <!-- 可以按照上面的格式继续添加其他分类 -->
+
+    </div>
+</div>
+
+
+    <div class="module">
+        <div class="module-title">Know More About Me</div>
+        <div class="contact">
+            <div class="icon-box" id="email-icon">
+                <img src="email_icon.png" alt="Email">
+                <span id="email-text">Email</span>
+            </div>
+            <a href="https://www.linkedin.com/in/qi-he-653619215" target="_blank" class="icon-box">
+                <img src="linkedin_icon.png" alt="LinkedIn">
+                LinkedIn
+            </a>
+            <a href="https://github.com/Hoki1014" target="_blank" class="icon-box">
+                <img src="github_icon.png" alt="GitHub">
+                GitHub
+            </a>
+            <a href="https://www.instagram.com/your_username/" target="_blank" class="icon-box">
+                <img src="instagram_icon.png" alt="Instagram">
+                Instagram
+            </a>
+        </div>
+    </div>
+</div>
+    <script>
+        const emailIcon = document.getElementById('email-icon');
+        const emailText = document.getElementById('email-text');
+        let emailVisible = false; // 标记email是否可见
+
+        emailIcon.addEventListener('click', function() {
+            if (emailVisible) {
+                emailText.textContent = 'Email';
+            } else {
+                emailText.textContent = 'qihe1014@gmail.com';
+            }
+            emailVisible = !emailVisible; // 切换email可见性标记
+        });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    let projectNames = document.querySelectorAll('.project-name');
+    
+    projectNames.forEach(name => {
+        name.addEventListener('mouseover', function() {
+            let hoverImage = this.getAttribute('data-hover-image');
+            let categoryImage = this.closest('.category-box').querySelector('.category-image');
+            categoryImage.src = hoverImage;
+        });
+
+        name.addEventListener('mouseout', function() {
+            let defaultImage = this.closest('.category-box').querySelector('.category-image').getAttribute('data-default-image');
+            this.closest('.category-box').querySelector('.category-image').src = defaultImage;
+        });
+    });
+});
+</script>
+</body>
+</html>
+
