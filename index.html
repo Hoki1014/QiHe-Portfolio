@@ -55,6 +55,46 @@
         transform: scale(1.02);  /* 使模块在悬停时放大2% */
         transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间为0.3秒 */
         }
+
+
+.aboutme-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;  /* 增加与Education的间距 */
+}
+
+.introduction {
+    flex: 7;
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.5);  /* 半透明的白色背景 */
+    font-size: 14px;  /* 字体大小调整 */
+    color: #888;  /* 字体颜色调整 */
+    transition: box-shadow 0.5s;  /* 添加过渡效果，使悬停更为平滑 */
+
+    border-radius: 15px;  /* 圆角边框 */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);  /* 添加具有立体感的阴影 */
+
+    margin-right: 2%;  /* 为个人介绍和图片之间添加间距 */
+}
+
+.introduction:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 5px 5px 20px rgba(0, 0, 0, 0.2);  /* 悬停时的星光效果 + 强化阴影 */
+}
+
+
+.illustration {
+    flex: 3;
+}
+
+.illustration img {
+    width: 90%;
+    max-width: 90%;
+    height: auto;
+}
+
+
+
         img {
             width: 24px;
             vertical-align: middle;
@@ -227,10 +267,23 @@
 </head>
 
 <body>
-    <div class="container">
+        <div class="container">
         <!-- Basic Info & Education Module -->
         <div class="module">
             <div class="module-title">About Me</div>
+
+            <!-- About Me Introduction Section -->
+            <div class="aboutme-container">
+                <div class="introduction">
+                    『 I am an experienced Data Analyst with a strong technical background and great operations skills. I am able to work on multiple projects at the same time, which at China Mobile Internet and have led great progress for the business. Furthermore, I immensely enjoy the process of deriving critical business insights using analytics, and then supporting or directly managing the efficiency implementation projects. My ability to move from analysis or leading a team of analysts to supporting or leading the actual project is something that could help further accelerate the velocity of work at Long Insights. 』
+                </div>
+                <div class="illustration">
+                    <img src="https://images.unsplash.com/photo-1542204637-e67bc7d41e48?fit=crop&w=500&h=500
+.jpg" alt="Your Procreate Artwork">
+                </div>
+            </div>
+
+            <!-- Education Section -->
             <div class="module-content">
                 <div>
                     <strong>Education:</strong>
@@ -241,6 +294,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
 
         <!-- Skills Module -->
         <div class="module">
