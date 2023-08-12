@@ -1,13 +1,13 @@
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qi HE's Portfolio</title>
-    <style>
-        body {
+
+<style>
+
+body {
             background-color: rgba(255, 182, 193, 0.7);
             font-family: Arial, sans-serif;
         }
@@ -29,6 +29,7 @@
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                color: #333; 
         }
 
         .module-title {
@@ -55,6 +56,7 @@
         transform: scale(1.02);  /* 使模块在悬停时放大2% */
         transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间为0.3秒 */
         }
+
 
 
 .aboutme-container {
@@ -94,14 +96,7 @@
 }
 
 
-
-        img {
-            width: 24px;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-
-        .skills {
+.skills {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -128,7 +123,9 @@
             background-color: #d4d4d4;
         }
 
-    .certificate {
+
+
+   .certificate {
         display: inline-block;  /* 改为inline-block，使得证书并排显示 */
         margin: 5px;
         padding: 10px;
@@ -162,44 +159,12 @@
         opacity: 1;  /* 鼠标悬停时显示文字 */
     }
 
-        .contact {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px; /* 控制图标间距 */
-        }
 
-        .icon-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 2px solid pink;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            color: transparent; /* 初始时文字透明 */
-            background-clip: text;
-            box-shadow: 0 0 5px pink; /* 文字边缘发光 */
-            transition: transform 0.3s, font-size 0.3s; /* 平滑的动画效果 */
-        }
+.container {
+    /* CSS code here */
+}
 
-        .icon-box img {
-            margin-bottom: 10px;
-            width: 15px;
-            height: 15px;
-        }
 
-        .icon-box:hover {
-            transform: scale(1.1); /* 鼠标悬浮时放大效果 */
-            font-size: 1.1em;
-        }
-
-        #email-icon {
-            cursor: pointer; /* 将鼠标样式更改为手形 */
-        }
-
-/* 横向滚动的容器样式 */
 .projects-container {
     display: flex;
     overflow-x: scroll;
@@ -223,6 +188,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #333
 }
 
 /* 项目名称样式 */
@@ -263,11 +229,50 @@
     margin-bottom: 10px;  /* 在图片和项目之间增加一些空间 */
 }
 
-    </style>
+
+.contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* 控制图标间距 */
+        }
+
+        .icon-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid pink;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: transparent; /* 初始时文字透明 */
+            background-clip: text;
+            box-shadow: 0 0 5px pink; /* 文字边缘发光 */
+            transition: transform 0.3s, font-size 0.3s; /* 平滑的动画效果 */
+        }
+
+        .icon-box img {
+            margin-bottom: 10px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .icon-box:hover {
+            transform: scale(1.1); /* 鼠标悬浮时放大效果 */
+            font-size: 1.1em;
+        }
+
+        #email-icon {
+            cursor: pointer; /* 将鼠标样式更改为手形 */
+        }
+
+</style>
 </head>
 
 <body>
-        <div class="container">
+
+<div class="container">
         <!-- Basic Info & Education Module -->
         <div class="module">
             <div class="module-title">About Me</div>
@@ -278,10 +283,10 @@
                     『 I am an experienced Data Analyst with a strong technical background and great operations skills. I am able to work on multiple projects at the same time, which at China Mobile Internet and have led great progress for the business. Furthermore, I immensely enjoy the process of deriving critical business insights using analytics, and then supporting or directly managing the efficiency implementation projects. My ability to move from analysis or leading a team of analysts to supporting or leading the actual project is something that could help further accelerate the velocity of work at Long Insights. 』
                 </div>
                 <div class="illustration">
-                    <img src="https://images.unsplash.com/photo-1542204637-e67bc7d41e48?fit=crop&w=500&h=500
-.jpg" alt="Your Procreate Artwork">
+                    <img src="https://images.unsplash.com/photo-1542204637-e67bc7d41e48?fit=crop&w=500&h=500.jpg" alt="Your Procreate Artwork">
                 </div>
             </div>
+
 
             <!-- Education Section -->
             <div class="module-content">
@@ -296,8 +301,8 @@
         </div>
     </div>
 
-
-        <!-- Skills Module -->
+      
+      <!-- Skills Module -->
         <div class="module">
             <div class="module-title">Skills</div>
             <div class="module-content skills">
@@ -338,6 +343,8 @@
             </div>
         </div>
 
+
+
         <!-- Certificates -->
 <div class="module">
     <div class="module-title">Certificates</div>
@@ -349,6 +356,7 @@
     </div>
 </div>
 
+
         <!-- Experience Module -->
         <div class="module">
             <div class="module-title">Experience</div>
@@ -359,6 +367,7 @@
                 </ul>
             </div>
         </div>
+
 
 <!-- 项目模块开始 -->
 <div class="module">
@@ -419,6 +428,7 @@
 </div>
 
 
+
     <div class="module">
         <div class="module-title">Know More About Me</div>
         <div class="contact">
@@ -441,20 +451,11 @@
         </div>
     </div>
 </div>
-    <script>
-        const emailIcon = document.getElementById('email-icon');
-        const emailText = document.getElementById('email-text');
-        let emailVisible = false; // 标记email是否可见
 
-        emailIcon.addEventListener('click', function() {
-            if (emailVisible) {
-                emailText.textContent = 'Email';
-            } else {
-                emailText.textContent = 'qihe1014@gmail.com';
-            }
-            emailVisible = !emailVisible; // 切换email可见性标记
-        });
-    </script>
+</body>
+
+<script>
+
     <script>
 document.addEventListener('DOMContentLoaded', function() {
     let projectNames = document.querySelectorAll('.project-name');
@@ -473,6 +474,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-</body>
-</html>
 
+
+    <script>
+        const emailIcon = document.getElementById('email-icon');
+        const emailText = document.getElementById('email-text');
+        let emailVisible = false; // 标记email是否可见
+
+        emailIcon.addEventListener('click', function() {
+            if (emailVisible) {
+                emailText.textContent = 'Email';
+            } else {
+                emailText.textContent = 'qihe1014@gmail.com';
+            }
+            emailVisible = !emailVisible; // 切换email可见性标记
+        });
+    </script>
+
+</script>
