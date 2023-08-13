@@ -10,7 +10,10 @@
 <style>
 
 body {
-  background: linear-gradient(to bottom right, #FFB6C1, #FFD1DA);
+  background-color: #b0c4de;
+    linear-gradient(0deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 5px 5px, 5px 5px;
   font-family: Arial, sans-serif;
 }
 
@@ -248,14 +251,14 @@ transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间�
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid pink;
+  border: 2px solid #b0c4de; /* 低饱和度的深蓝色 */;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   color: transparent; /* 初始时文字透明 */
   background-clip: text;
-  box-shadow: 0 0 5px pink; /* 文字边缘发光 */
+  box-shadow: 0 0 5px #b0c4de; /* 低饱和度的深蓝色 */; /* 文字边缘发光 */
   transition: transform 0.3s, font-size 0.3s; /* 平滑的动画效果 */
 }
 
@@ -268,6 +271,7 @@ transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间�
 .icon-box:hover {
   transform: scale(1.1); /* 鼠标悬浮时放大效果 */
   font-size: 1.1em;
+  color: #b0c4de;
 }
 
 #email-icon {
