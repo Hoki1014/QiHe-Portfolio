@@ -6,8 +6,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Qi HE's Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <style>
+
+
+.construction-module {
+    background: none !important;  /* 去掉背景 */
+    border: none !important;  /* 去掉边框 */
+    box-shadow: none !important;  /* 如果有阴影的话，去掉 */
+    padding: 0 !important;  /* 去掉内边距 */
+    margin: 0 !important;  /* 去掉外边距 */
+    /* 其他您想重写的样式 */
+}
+
+.under-construction {
+    background-color: #ffe58f; /* 浅黄色背景 */
+    color: red;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid #ffa940; /* 橙色边界 */
+}
+
+.under-construction i {
+    margin-left: 10px; /* 给图标和文字之间增加一些间距 */
+}
+
+
 
 body {
   background-color: #b0c4de;
@@ -44,7 +70,7 @@ body {
   color: black; /* 将文字颜色设为透明 */
   -webkit-text-stroke: 0.5px #808080; /* 边缘，宽度2px */
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #333;
   border-bottom: 2px solid #666;
   padding-bottom: 10px;
@@ -69,7 +95,7 @@ transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间�
 .aboutme-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 40px;  /* 增加与Education的间距 */
 }
 
@@ -283,6 +309,14 @@ transition: transform 0.3s ease;  /* 平滑地应用放大效果，过渡时间�
 
 <body>
 <div class="container">
+
+<div class="module construction-module">
+  <!-- 在您的主体内容之前加入 "正在施工中" 标注 -->
+  <div class="under-construction">
+      !Portfolio Under Construction! <i class="fas fa-hard-hat"></i>
+  </div>
+</div> 
+
 
   <div class="module">
   <div class="module-title">About Me</div>
